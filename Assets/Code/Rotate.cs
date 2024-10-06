@@ -2,5 +2,7 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
-    private void FixedUpdate() => transform.Rotate(Vector3.up, 1);
+    [SerializeField] private float _speed;
+
+    private void FixedUpdate() => transform.Rotate(Vector3.up, _speed * Time.fixedDeltaTime);
 }
